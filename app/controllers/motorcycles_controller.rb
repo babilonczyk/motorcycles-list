@@ -2,12 +2,13 @@
 class MotorcyclesController < ApplicationController
   before_action :find_motorcycle, only: [ :show, :edit, :update, :destroy ]
 
+  require 'net/http'
+  require 'json'
+
   def index
     @motorcycles = Motorcycle.all
 
     unless @motorcycles.exists?
-      require 'net/http'
-      require 'json'
 
       url = 'http://localhost:1234/motorcycles'
       uri = URI(url)
@@ -48,7 +49,14 @@ class MotorcyclesController < ApplicationController
 
   def destroy
     @motorcycle.destroy
+
+    uri = URI("http://localhost:1234/motorcycles/#{@motorcycle.id}")
+    http = Net::HTTP.new(uri.host, uri.port)
+    req = Net::HTTP::Delete.new(uri.path)
+    http.request(req)
+
     redirect_to motorcycles_path
+
   end
 
   private

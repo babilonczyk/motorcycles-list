@@ -25,14 +25,6 @@
       "name": "Challenger"
     },
     {
-      "id": 6,
-      "name": "Focus"
-    },
-    {
-      "id": 7,
-      "name": "F-150"
-    },
-    {
       "id": 8,
       "name": "Grand Cherokee"
     },
@@ -61,20 +53,12 @@
       "name": "Model T"
     },
     {
-      "id": 15,
-      "name": "Model T"
-    },
-    {
       "id": 16,
       "name": "Model S"
     },
     {
       "id": 17,
       "name": "F-150"
-    },
-    {
-      "id": 18,
-      "name": "ATS"
     },
     {
       "id": 19,
@@ -119,10 +103,6 @@
     {
       "id": 29,
       "name": "Model 3"
-    },
-    {
-      "id": 30,
-      "name": "PT Cruiser"
     },
     {
       "id": 31,
