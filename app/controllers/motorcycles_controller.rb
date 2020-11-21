@@ -57,6 +57,21 @@ class MotorcyclesController < ApplicationController
 
   def update
     @motorcycle.update(motorcycle_params)
+
+    request_header = { 'Content-Type': 'application/json' }
+    uri = URI("http://localhost:1234/motorcycles/#{@motorcycle.id}")
+
+    request_params =  {
+        id: @motorcycle.id,
+        name: @motorcycle.name
+    }
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Patch.new(uri.path, request_header)
+    request.body = request_params.to_json
+    http.request(request)
+
+
     redirect_to motorcycles_path
   end
 
