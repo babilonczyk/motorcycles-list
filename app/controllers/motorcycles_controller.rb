@@ -33,6 +33,19 @@ class MotorcyclesController < ApplicationController
     @motorcycle = Motorcycle.new(motorcycle_params)
 
     if @motorcycle.save
+      request_header = { 'Content-Type': 'application/json' }
+      uri = URI("http://localhost:1234/motorcycles")
+
+      request_params =  {
+          id: @motorcycle.id,
+          name: @motorcycle.name
+      }
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Post.new(uri.path, request_header)
+      request.body = request_params.to_json
+      http.request(request)
+
       redirect_to motorcycles_path
     else
       render :new
