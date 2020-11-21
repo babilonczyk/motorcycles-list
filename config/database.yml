@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: motorcycles-development
+  username: <%= Rails.application.credentials.dig(:development_username) %>
+  password: <%= Rails.application.credentials.dig(:development_password) %>
+
+test:
+  <<: *default
+  database: motorcycles-test
+  username: <%= Rails.application.credentials.dig(:test_username) %>
+  password: <%= Rails.application.credentials.dig(:test_password) %>
+
+production:
+  <<: *default
+  database: motorcycles-production
+
