@@ -4,6 +4,21 @@ class MotorcyclesController < ApplicationController
 
   def index
     @motorcycles = Motorcycle.all
+
+    unless @motorcycles.exists?
+      require 'net/http'
+      require 'json'
+
+      url = 'http://localhost:1234/motorcycles'
+      uri = URI(url)
+      response = Net::HTTP.get(uri)
+      json = JSON.parse(response)
+
+      json.each do |m|
+        Motorcycle.create( name: m["name"])
+      end
+
+    end
   end
 
   def show
@@ -32,15 +47,14 @@ class MotorcyclesController < ApplicationController
   end
 
   def destroy
-    if motorcycle.destroy
-      render motorcycles_path
-    end
+    @motorcycle.destroy
+    redirect_to motorcycles_path
   end
 
   private
 
   def find_motorcycle
-    motorcycle = Motorcycle.find(params[:id])
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def motorcycle_params
