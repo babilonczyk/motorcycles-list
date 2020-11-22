@@ -1,24 +1,27 @@
-# README
+# Motorcycles-list
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small project made with purpose of learning more about JSON APIs, React/Redux in Rails, Service Objects and RSpec.
 
-Things you may want to cover:
+# Usage: 
 
-* Ruby version
+1) Create *master.key* file in /config firectory and fill it with the *8c89379d015423709b718bbfa1b1183d* ( I make it public since it is just a project made for learning only) 
 
-* System dependencies
+2) Set text editor 
 
-* Configuration
+   ```SET EDITOR="path/to/text/editor"```
 
-* Database creation
+3) Fill it with your postgresql username and password
 
-* Database initialization
+   ```rails credentials:edit```
 
-* How to run the test suite
+4) Install all dependencies including json-server dependency
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```npm install```
 
-* Deployment instructions
+5) Run json-server ( pseudo api in the background on port 1234 )
 
-* ...
+   ```json-server -p 1234 db-1605979820493.json & ```
+
+6) Start rails server
+
+   ```rails s```
