@@ -1,6 +1,6 @@
 # Motorcycles-list
 
-A small project made with purpose of learning more about JSON APIs and React/Redux in Rails.
+A small project made with purpose of learning more about JSON APIs, React/Redux in Rails, Service Objects and RSpec.
 
 # Usage: 
 
