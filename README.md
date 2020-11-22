@@ -4,7 +4,7 @@ A small project made with purpose of learning more about JSON APIs, React/Redux 
 
 # Usage: 
 
-1) Create *master.key* file in /config firectory and fill it with the 8c89379d015423709b718bbfa1b1183d ( I make it public since it is just a project made for learning only) 
+1) Create *master.key* file in /config firectory and fill it with the *8c89379d015423709b718bbfa1b1183d* ( I make it public since it is just a project made for learning only) 
 
 2) Set text editor 
 
