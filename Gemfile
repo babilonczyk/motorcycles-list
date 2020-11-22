@@ -13,11 +13,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'factory_bot'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -29,6 +29,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
