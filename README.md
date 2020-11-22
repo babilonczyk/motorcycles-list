@@ -14,7 +14,7 @@ A small project made with purpose of learning more about JSON APIs, React/Redux 
 
    ```rails credentials:edit```
 
-4) We need to install json-server dependency
+4) Install all dependencies including json-server dependency
 
    ```npm install```
 
