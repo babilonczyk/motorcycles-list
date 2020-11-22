@@ -45,16 +45,8 @@
       "name": "Cruze"
     },
     {
-      "id": 13,
-      "name": "Alpine"
-    },
-    {
       "id": 14,
       "name": "Model T"
-    },
-    {
-      "id": 16,
-      "name": "Model S"
     },
     {
       "id": 17,
@@ -63,10 +55,6 @@
     {
       "id": 19,
       "name": "Alpine"
-    },
-    {
-      "id": 20,
-      "name": "Jetta"
     },
     {
       "id": 21,

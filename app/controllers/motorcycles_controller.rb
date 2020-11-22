@@ -10,14 +10,7 @@ class MotorcyclesController < ApplicationController
 
     unless @motorcycles.exists?
 
-      url = 'http://localhost:1234/motorcycles'
-      uri = URI(url)
-      response = Net::HTTP.get(uri)
-      json = JSON.parse(response)
-
-      json.each do |m|
-        Motorcycle.create( name: m["name"])
-      end
+      ::Motorcycles::SendRequest.new("GET", "http://localhost:1234/motorcycles").request
 
     end
   end
@@ -33,18 +26,13 @@ class MotorcyclesController < ApplicationController
     @motorcycle = Motorcycle.new(motorcycle_params)
 
     if @motorcycle.save
-      request_header = { 'Content-Type': 'application/json' }
-      uri = URI("http://localhost:1234/motorcycles")
 
       request_params =  {
           id: @motorcycle.id,
           name: @motorcycle.name
       }
 
-      http = Net::HTTP.new(uri.host, uri.port)
-      request = Net::HTTP::Post.new(uri.path, request_header)
-      request.body = request_params.to_json
-      http.request(request)
+      ::Motorcycles::SendRequest.new("POST", "http://localhost:1234/motorcycles", request_params).request
 
       redirect_to motorcycles_path
     else
@@ -58,19 +46,12 @@ class MotorcyclesController < ApplicationController
   def update
     @motorcycle.update(motorcycle_params)
 
-    request_header = { 'Content-Type': 'application/json' }
-    uri = URI("http://localhost:1234/motorcycles/#{@motorcycle.id}")
-
     request_params =  {
         id: @motorcycle.id,
         name: @motorcycle.name
     }
 
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Patch.new(uri.path, request_header)
-    request.body = request_params.to_json
-    http.request(request)
-
+    ::Motorcycles::SendRequest.new("PATCH", "http://localhost:1234/motorcycles/#{@motorcycle.id}", request_params).request
 
     redirect_to motorcycles_path
   end
@@ -78,10 +59,7 @@ class MotorcyclesController < ApplicationController
   def destroy
     @motorcycle.destroy
 
-    uri = URI("http://localhost:1234/motorcycles/#{@motorcycle.id}")
-    http = Net::HTTP.new(uri.host, uri.port)
-    req = Net::HTTP::Delete.new(uri.path)
-    http.request(req)
+    ::Motorcycles::SendRequest.new("DELETE", "http://localhost:1234/motorcycles/#{@motorcycle.id}").request
 
     redirect_to motorcycles_path
 
