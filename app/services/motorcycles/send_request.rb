@@ -32,14 +32,14 @@ module Motorcycles
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.path, request_header)
       request.body = request_params.to_json
-      http.request(request)
+      http.request(request) #201 CREATED
     end
 
     def delete_request( url )
       uri = URI(url)
       http = Net::HTTP.new(uri.host, uri.port)
       req = Net::HTTP::Delete.new(uri.path)
-      http.request(req)
+      http.request(req) # 200 OK
     end
 
     def patch_request( url, request_params )
@@ -49,7 +49,7 @@ module Motorcycles
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Patch.new(uri.path, request_header)
       request.body = request_params.to_json
-      http.request(request)
+      http.request(request) # 200 OK
     end
 
     def get_request( url )
@@ -60,6 +60,7 @@ module Motorcycles
       json.each do |m|
         Motorcycle.create( name: m["name"])
       end
+
     end
   end
 end
