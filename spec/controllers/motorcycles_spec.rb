@@ -18,17 +18,35 @@ RSpec.describe MotorcyclesController, type: :controller do
 
 
   describe "GET new" do
-    subject{ get :new }
+    before do
+      get :new
+    end
 
     it 'should render the new template' do
-      subject
       expect(response).to render_template(:new)
     end
 
-    it 'should assign @motorcycle with new Motorcycle Object' do
-      subject
+    it 'should assign @motorcycle with new Motorcycle object' do
       expect( assigns( :motorcycle ) ).to be_a_new( Motorcycle )
     end
+  end
+
+  describe "POST create" do
+    subject { post :create, params: motorcycle_params  }
+
+    let( :motorcycle_params ) do
+      {
+          motorcycle: {
+              name: "test_motorcycle"
+          }
+      }
+    end
+
+    it "should create a new Motorcycle object" do
+      expect { subject }.to change(Motorcycle, :count).from(0).to(1)
+    end
+
+
   end
 
 end
