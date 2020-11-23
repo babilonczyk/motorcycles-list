@@ -29,6 +29,19 @@ A small project made with purpose of learning more about JSON APIs, React/Redux 
 
 # Running Tests: 
 
+NOTICE: BEFORE EVERY TEST RUN IT IS IMPORTANT TO CLEAN RSPEC.JSON FILE TO ITS FIRST RECORD TO LOOK LIKE THIS:
+
+```
+{
+  "motorcycles": [
+    {
+      "id": 0,
+      "name": "test_motorcycle"
+    }
+  ]
+}
+```
+
 1) Run json-server ( pseudo api in the background on port 1234 )
 
    ```json-server -p 1234 rspec.json & ```
