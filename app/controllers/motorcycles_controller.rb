@@ -28,7 +28,6 @@ class MotorcyclesController < ApplicationController
     if @motorcycle.save
 
       request_params =  {
-          id: @motorcycle.id,
           name: @motorcycle.name
       }
 

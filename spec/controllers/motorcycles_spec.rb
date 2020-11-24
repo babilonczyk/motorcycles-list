@@ -46,7 +46,6 @@ RSpec.describe MotorcyclesController, type: :controller do
       expect { subject }.to change(Motorcycle, :count).from(0).to(1)
     end
 
-
   end
 
 end
