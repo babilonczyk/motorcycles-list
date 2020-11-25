@@ -22,9 +22,9 @@ A small project made with purpose of learning more about JSON APIs, React/Redux 
 
    ```json-server -p 1234 motorcycles.json & ```
 
-6) Start rails server
+6) Start rails project through foreman
 
-   ```rails s```
+   ```foreman start -f Procfile.dev ```
 
 
 # Running Tests: 
