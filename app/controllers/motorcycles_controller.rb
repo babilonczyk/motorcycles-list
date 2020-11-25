@@ -23,7 +23,7 @@ class MotorcyclesController < ApplicationController
   end
 
   def create
-    @motorcycle = Motorcycle.new(motorcycle_params)
+    @motorcycle = RequestManager.new(motorcycle_params)
 
     if @motorcycle.save
 
@@ -31,7 +31,7 @@ class MotorcyclesController < ApplicationController
           name: @motorcycle.name
       }
 
-      ::Motorcycles::SendRequest.new("POST", "http://localhost:1234/motorcycles", request_params).request
+      ::Motorcycles::RequestManager.new("POST", "http://localhost:1234/motorcycles", request_params).request
 
       redirect_to motorcycles_path
     else
@@ -50,7 +50,7 @@ class MotorcyclesController < ApplicationController
         name: @motorcycle.name
     }
 
-    ::Motorcycles::SendRequest.new("PATCH", "http://localhost:1234/motorcycles/#{@motorcycle.id}", request_params).request
+    ::Motorcycles::RequestManager.new("PATCH", "http://localhost:1234/motorcycles/#{@motorcycle.id}", request_params).request
 
     redirect_to motorcycles_path
   end
@@ -58,7 +58,7 @@ class MotorcyclesController < ApplicationController
   def destroy
     @motorcycle.destroy
 
-    ::Motorcycles::SendRequest.new("DELETE", "http://localhost:1234/motorcycles/#{@motorcycle.id}").request
+    ::Motorcycles::RequestManager.new("DELETE", "http://localhost:1234/motorcycles/#{@motorcycle.id}").request
 
     redirect_to motorcycles_path
 

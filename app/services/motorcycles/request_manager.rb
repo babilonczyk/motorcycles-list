@@ -1,7 +1,7 @@
 
 module Motorcycles
 
-  class SendRequest
+  class RequestManager
 
     def initialize(method, url, request_params="")
       @method = method
