@@ -35,7 +35,7 @@ NOTICE: BEFORE EVERY TEST RUN IT IS IMPORTANT TO RESTART JSON-SERVER AND TO CLEA
 {
   "motorcycles": [
     {
-      "id": 0,
+      "id": 1,
       "name": "test_motorcycle"
     }
   ]
