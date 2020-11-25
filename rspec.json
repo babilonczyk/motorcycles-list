@@ -1,8 +1,16 @@
 {
   "motorcycles": [
     {
-      "id": 0,
+      "id": 1,
       "name": "test_motorcycle"
+    },
+    {
+      "name": "test_motorcycle",
+      "id": 2
+    },
+    {
+      "name": "test_motorcycle",
+      "id": 3
     }
   ]
 }

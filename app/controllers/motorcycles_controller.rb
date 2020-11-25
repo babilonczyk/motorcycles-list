@@ -10,7 +10,7 @@ class MotorcyclesController < ApplicationController
 
     unless @motorcycles.exists?
 
-      ::Motorcycles::SendRequest.new("GET", "http://localhost:1234/motorcycles").request
+      ::Motorcycles::RequestManager.new("GET", "http://localhost:1234/motorcycles").request
 
     end
   end
@@ -23,7 +23,7 @@ class MotorcyclesController < ApplicationController
   end
 
   def create
-    @motorcycle = RequestManager.new(motorcycle_params)
+    @motorcycle = Motorcycle.new(motorcycle_params)
 
     if @motorcycle.save
 
