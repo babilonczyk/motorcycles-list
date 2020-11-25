@@ -6,16 +6,11 @@
   <thead><th>#</th><th>motorcycle name</th></thead>
   <tbody>
     <% @motorcycles.each_with_index do |m, i| %>
-      <tr>
-        <td> <%= i + 1 %> </td>
-        <td> <%= m.name %> </td>
-        <td> <%= link_to 'delete', motorcycle_path(m), method: :delete %> </td>
-        <td> <%= link_to 'edit', edit_motorcycle_path(m) %> </td>
-      </tr>
+      <%= react_component("Motorcycle", props: { index: i + 1, name: m.name, link_delete: "/motorcycles/#{m.id}", link_edit: "/motorcycles/#{m.id}/edit"}, prerender: false) %>
     <% end %>
   </tbody>
 </table>
 
 <br><br>
 
-<%= @json %>
+

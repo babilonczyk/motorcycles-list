@@ -1,12 +1,8 @@
 {
   "motorcycles": [
     {
-      "id": 1,
-      "name": "Explorer"
-    },
-    {
       "id": 2,
-      "name": "Explorer 2"
+      "name": "Explorer 3"
     },
     {
       "id": 3,
