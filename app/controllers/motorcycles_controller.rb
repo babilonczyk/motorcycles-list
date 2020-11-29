@@ -7,8 +7,10 @@ class MotorcyclesController < ApplicationController
 
   def index
     @motorcycles = Motorcycle.all
-    @delete_link = '<%= link_to ' + 'delete' + ', motorcycle_path(m), method: :delete %>'
-    @edit_link = '<%= link_to ' + 'edit' + ', edit_motorcycle_path(m) %>'
+
+    @motorcyclesJSON = Array.new()
+    @motorcycles.each { |m| @motorcyclesJSON << ActiveSupport::JSON.encode(m) }
+
 
     unless @motorcycles.exists?
 

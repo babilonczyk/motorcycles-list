@@ -1,8 +1,8 @@
-<%= render 'shared/nav' %>
+<%= react_component("MotorcyclesNavbar", prerender: false) %>
 
 <div class="container">
 
   <h6>Add a motorcycle</h6>
 
-  <%= render 'form' %>
+  <%= render 'form', type: 'UPDATE'  %>
 </div>

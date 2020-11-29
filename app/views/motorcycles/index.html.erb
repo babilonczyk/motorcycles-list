@@ -1,16 +1,7 @@
-<%= render 'shared/nav' %>
+<%= react_component("MotorcyclesNavbar", prerender: false) %>
 
-<br>
+<%= react_component("App", props: { motorcycles: @motorcycles}, prerender: false) %>
 
-<table class="table table-striped table-bordered">
-  <thead><th>#</th><th>motorcycle name</th></thead>
-  <tbody>
-    <% @motorcycles.each_with_index do |m, i| %>
-      <%= react_component("Motorcycle", props: { index: i + 1, name: m.name, link_delete: "/motorcycles/#{m.id}", link_edit: "/motorcycles/#{m.id}/edit"}, prerender: false) %>
-    <% end %>
-  </tbody>
-</table>
 
-<br><br>
 
 

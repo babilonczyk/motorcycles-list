@@ -1,4 +1,2 @@
-<%= simple_form_for @motorcycle do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit%>
-<% end %>
+
+<%= react_component("Form", props: { motorcycle: @motorcycle, method: type}, prerender: false) %>
