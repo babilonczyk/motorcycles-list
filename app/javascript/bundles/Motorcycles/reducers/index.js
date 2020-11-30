@@ -13,21 +13,44 @@ export const reducer = ( state = initialState, action ) => {
 
             return {
             ...state,
+            motorcycles: state.motorcycles.filter(motorcycle => motorcycle.id !== action.payload.id)
         };
         case constants.CREATE_MOTORCYCLE:
             console.log("CREATE_MOTORCYCLE");
+            let id = 0;
+
+            for (let motorcycle of state.motorcycles) {
+                if(motorcycle.id > id) {
+                    id = motorcycle.id
+                }
+            }
 
             return {
-            ...state,
+                ...state,
+                motorcycles: [
+                    ...state.motorcycles,
+                    {
+                        id: id + 1,
+                        name: action.payload.name,
+                    }
+                ]
         };
         case constants.UPDATE_MOTORCYCLE:
             console.log("UPDATE_MOTORCYCLE");
 
-            return {
-            ...state,
-        };
+            const new_payload = state.motorcycles.map((motorcycle) => {
 
-        default: return state;
+                if (motorcycle.id === action.payload.id) {
+                    motorcycle.name = action.payload.name;
+                }
+
+                return motorcycle;
+            });
+
+            return {
+                ...state,
+                motorcycles: new_payload
+        };
     }
 };
 

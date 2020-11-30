@@ -10,12 +10,12 @@ const MotorcycleForm = (props) => {
 
     let req = null;
 
-    if ( method === 'CREATE' ) {
+    if ( method === 'UPDATE' ) {
         req = (
             <Fragment>
                 <form onSubmit={ () => props.update(event, motorcycle.id) }>
                     <div>
-                        <input type='text' defaultValue={name}/>
+                        <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
                     </div>
                     <div>
                         <button type='submit'>Submit</button>
@@ -23,12 +23,12 @@ const MotorcycleForm = (props) => {
                 </form>
             </Fragment>
         )
-    } else if ( method === 'UPDATE' ) {
+    } else if ( method === 'CREATE' ) {
         req = (
             <Fragment>
-                <form onSubmit={ () => props.create(motorcycle) }>
+                <form onSubmit={ () => props.create(event) }>
                     <div>
-                        <input type='text' defaultValue={name}/>
+                        <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
                     </div>
                     <div>
                         <button type='submit'>Submit</button>
@@ -51,7 +51,7 @@ MotorcycleForm.propTypes = {
 const mapDispatchToProps = dispatch => {
     return {
         update: (event, id) => dispatch(actions.updateMotorcycle(event, id)),
-        create: (motorcycle) => dispatch(actions.createMotorcycle(motorcycle))
+        create: (event) => dispatch(actions.createMotorcycle(event))
     };
 };
 

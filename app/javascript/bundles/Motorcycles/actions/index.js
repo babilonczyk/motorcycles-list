@@ -10,20 +10,20 @@ export function deleteMotorcycle( id ) {
     }
 }
 
-export function createMotorcycle( motorcycle ) {
+export function createMotorcycle( event ) {
+    const data = new FormData(event.target);
+
     return {
         type: constants.CREATE_MOTORCYCLE,
         info: 'createMotorcycle',
         payload: {
-            id: motorcycle.id,
-            name: motorcycle.name,
+            data
         }
     }
 }
 
 export function updateMotorcycle( event, id ) {
 
-    event.preventDefault();
     const data = new FormData(event.target);
 
     return {

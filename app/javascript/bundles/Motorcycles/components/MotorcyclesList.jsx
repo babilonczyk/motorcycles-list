@@ -10,11 +10,11 @@ const MotorcyclesList = (props) => {
     const arr = [];
 
     for (let i = 0; i < motorcycles.length; i ++) {
-        arr.push(< Motorcycle key={motorcycles[i].id} index={i + 1} name={motorcycles[i].name} link_delete={"/motorcycles/" + motorcycles[i].id} link_edit={"/motorcycles/" + motorcycles[i].id + "/edit" } />)
+        arr.push(< Motorcycle key={motorcycles[i].id} index={motorcycles[i].id} name={motorcycles[i].name} link_delete={"/motorcycles/" + motorcycles[i].id} link_edit={"/motorcycles/" + motorcycles[i].id + "/edit" } />)
     }
 
     return (
-        <table className="table table-striped table-bordered">
+        <table >
             <thead>
                 <tr>
                     <th>#</th>

@@ -18,7 +18,7 @@ module Motorcycles
       json = JSON.parse(response)
 
       json.each do |m|
-        Motorcycle.create( name: m["name"])
+        Motorcycle.create( id: m["id"], name: m["name"])
       end
     end
 

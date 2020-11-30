@@ -8,10 +8,6 @@ class MotorcyclesController < ApplicationController
   def index
     @motorcycles = Motorcycle.all
 
-    @motorcyclesJSON = Array.new()
-    @motorcycles.each { |m| @motorcyclesJSON << ActiveSupport::JSON.encode(m) }
-
-
     unless @motorcycles.exists?
 
       ::Motorcycles::RequestManager.new("GET", "http://localhost:1234/motorcycles").request
