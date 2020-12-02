@@ -9,7 +9,7 @@ const Motorcycle = (props) => {
     const [link_edit, setLinkEdit] = useState(props.link_edit);
 
     return (
-        <tr>
+        <tr className={"list-item"}>
             <td> {index} </td>
             <td> {name} </td>
             <td> <a data-confirm="Are you sure?" onClick={() => props.delete(index)}> delete </a> </td>

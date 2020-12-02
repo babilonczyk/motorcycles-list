@@ -23,6 +23,7 @@ class MotorcyclesController < ApplicationController
   end
 
   def create
+
     @motorcycle = Motorcycle.new(motorcycle_params)
 
     if @motorcycle.save

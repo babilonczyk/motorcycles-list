@@ -9,7 +9,6 @@ export function deleteRequest(action) {
     })  .then(response => response.json())
         .then(result => {
             console.log('Success:', result);
-            prompt(result);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -29,7 +28,6 @@ export function updateRequest(action) {
     })  .then(response => response.json())
         .then(result => {
             console.log('Success:', result);
-            prompt(result);
         })
         .catch(error => {
             console.error('Error:', error);

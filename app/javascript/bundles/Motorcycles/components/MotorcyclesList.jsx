@@ -14,11 +14,13 @@ const MotorcyclesList = (props) => {
     }
 
     return (
-        <table >
+        <table id={"list"}>
             <thead>
-                <tr>
+                <tr className={"list-item"}>
                     <th>#</th>
                     <th>motorcycle name</th>
+                    <th>delete</th>
+                    <th>edit</th>
                 </tr>
             </thead>
 

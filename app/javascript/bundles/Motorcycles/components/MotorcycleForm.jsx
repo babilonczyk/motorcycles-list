@@ -13,11 +13,17 @@ const MotorcycleForm = (props) => {
     if ( method === 'UPDATE' ) {
         req = (
             <Fragment>
-                <form onSubmit={ () => props.update(event, motorcycle.id) }>
-                    <div>
+                <form  id={"form"} onSubmit={ () => props.update(event, motorcycle.id) }>
+
+                    <h4>Add new motorcycle</h4>
+
+                    <p>Name:</p>
+
+                    <div className={"form-field"}>
                         <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
                     </div>
-                    <div>
+
+                    <div className={"form-field"}>
                         <button type='submit'>Submit</button>
                     </div>
                 </form>
@@ -26,11 +32,17 @@ const MotorcycleForm = (props) => {
     } else if ( method === 'CREATE' ) {
         req = (
             <Fragment>
-                <form onSubmit={ () => props.create(event) }>
-                    <div>
+                <form id={"form"} onSubmit={ () => props.create(event) }>
+
+                    <h4>Add new motorcycle</h4>
+
+                    <p>Name:</p>
+
+                    <div className={"form-field"}>
                         <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
                     </div>
-                    <div>
+
+                    <div className={"form-field"}>
                         <button type='submit'>Submit</button>
                     </div>
                 </form>
