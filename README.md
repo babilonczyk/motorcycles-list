@@ -10,7 +10,7 @@ New/Edit View:
 
 ![Alt text](app/assets/images/readme2.png?raw=true "Readme img")
 
-# Install: 
+# Install:  
 
 1) Create *master.key* file in /config firectory and fill it with the *8c89379d015423709b718bbfa1b1183d* ( I make it public since it is just a project made for learning only) 
 
