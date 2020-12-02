@@ -87,54 +87,6 @@
     {
       "name": "TEST",
       "id": 40
-    },
-    {
-      "id": 3,
-      "name": "TEST 2"
-    },
-    {
-      "id": 4,
-      "name": ""
-    },
-    {
-      "id": 5,
-      "name": "das"
-    },
-    {
-      "id": 6,
-      "name": "sda"
-    },
-    {
-      "id": 7,
-      "name": "ds"
-    },
-    {
-      "id": 8,
-      "name": "sfa"
-    },
-    {
-      "id": 9,
-      "name": "afs"
-    },
-    {
-      "id": 10,
-      "name": "ads"
-    },
-    {
-      "id": 11,
-      "name": "dsa"
-    },
-    {
-      "id": 12,
-      "name": "asd"
-    },
-    {
-      "id": 14,
-      "name": "TEST6"
-    },
-    {
-      "id": 41,
-      "name": "111111111111"
     }
   ]
 }
