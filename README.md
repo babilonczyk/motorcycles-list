@@ -4,11 +4,11 @@ A small project made with purpose of learning more about JSON APIs, React/Redux 
 
 Index View:
 
-![Alt text](app/assets/images/readme1.png?raw=true "Readme img")
+![Alt text](app/assets/images/readme.png "Readme img")
 
 New/Edit View:
 
-![Alt text](app/assets/images/readme2.png?raw=true "Readme img")
+![Alt text](app/assets/images/readme1.png "Readme img")
 
 # Install:  
 
