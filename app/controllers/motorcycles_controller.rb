@@ -26,7 +26,9 @@ class MotorcyclesController < ApplicationController
 
     last_id = ::Motorcycles::LastIdRequest.new("http://localhost:1234/motorcycles").request
 
-    @motorcycle = Motorcycle.new(id: last_id  ,name: motorcycle_params[:name])
+    @motorcycle = Motorcycle.new(motorcycle_params)
+
+    @motorcycle.id = last_id + 1
 
     if @motorcycle.save
 

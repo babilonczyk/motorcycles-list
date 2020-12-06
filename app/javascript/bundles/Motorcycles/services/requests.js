@@ -37,19 +37,22 @@ export function updateRequest(action) {
 
 
 export function createRequest(action) {
-    return fetch('http://localhost:3000//motorcycles', {
+
+    return fetch('http://localhost:3000/motorcycles', {
         method: 'POST',
         headers: {
             'Content-Disposition': 'form-data',
             'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').content
         },
         body: action.payload.data
-    })  .then(response => response.json())
+    })  .then(response => {
+            response.json();
+        })
         .then(result => {
-            console.log('Success:', result);
+            prompt('Success:', result);
         })
         .catch(error => {
-            console.error('Error:', error);
+            prompt('Error:', error);
         });
 }
 
