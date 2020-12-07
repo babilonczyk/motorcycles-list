@@ -1,9 +1,8 @@
 
+
 class MotorcyclesController < ApplicationController
   before_action :find_motorcycle, only: [ :show, :edit, :update, :destroy ]
 
-  require 'net/http'
-  require 'json'
 
   def index
     @motorcycles = Motorcycle.all
