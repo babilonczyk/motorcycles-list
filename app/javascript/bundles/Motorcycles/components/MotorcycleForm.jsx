@@ -8,50 +8,29 @@ const MotorcycleForm = (props) => {
     const [motorcycle, setMotorcycle] = useState(props.motorcycle);
     const [method, setMethod] = useState(props.method);
 
-    let req = null;
+    function submitHandle() {
+        if ( method === 'UPDATE' )
+            props.update(event, motorcycle.id);
+        else if ( method === 'CREATE' )
+            props.create(event);
 
-    if ( method === 'UPDATE' ) {
-        req = (
-            <Fragment>
-                <form  id={"form"} onSubmit={ () => props.update(event, motorcycle.id) }>
-
-                    <h4>Add new motorcycle</h4>
-
-                    <p>Name:</p>
-
-                    <div className={"form-field"}>
-                        <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
-                    </div>
-
-                    <div className={"form-field"}>
-                        <button type='submit'>Submit</button>
-                    </div>
-                </form>
-            </Fragment>
-        )
-    } else if ( method === 'CREATE' ) {
-        req = (
-            <Fragment>
-                <form id={"form"} onSubmit={ () => props.create(event) }>
-
-                    <h4>Add new motorcycle</h4>
-
-                    <p>Name:</p>
-
-                    <div className={"form-field"}>
-                        <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
-                    </div>
-
-                    <div className={"form-field"}>
-                        <button type='submit'>Submit</button>
-                    </div>
-                </form>
-            </Fragment>
-        )
     }
 
     return (
-        req
+        <form id={"form"} onSubmit={ submitHandle }>
+
+            <h4>Add new motorcycle</h4>
+
+            <p>Name:</p>
+
+            <div className={"form-field"}>
+                <input type='text' name='motorcycle[name]' defaultValue={motorcycle.name}/>
+            </div>
+
+            <div className={"form-field"}>
+                <button type='submit'>Submit</button>
+            </div>
+        </form>
     );
 };
 

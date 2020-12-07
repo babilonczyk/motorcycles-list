@@ -2,11 +2,11 @@
   "motorcycles": [
     {
       "id": 1,
-      "name": "Grand Caravan 2 2"
+      "name": "Grand Caravan 1"
     },
     {
       "id": 2,
-      "name": "Grand Caravan 2 2"
+      "name": "Grand Caravan 2"
     },
     {
       "id": 3,
@@ -15,6 +15,10 @@
     {
       "id": 4,
       "name": "TEST"
+    },
+    {
+      "id": 5,
+      "name": "TEST 2"
     }
   ]
 }
