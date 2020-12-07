@@ -7,13 +7,6 @@ export function deleteRequest(action) {
             'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').content
         }
     })  .then(response => response.json())
-        .then(result => {
-            console.log('Success:', result);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            prompt(error);
-        });
 }
 
 export function updateRequest(action) {
@@ -26,13 +19,6 @@ export function updateRequest(action) {
         },
         body:  action.payload.data
     })  .then(response => response.json())
-        .then(result => {
-            console.log('Success:', result);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            prompt(error);
-        });
 }
 
 
@@ -48,12 +34,6 @@ export function createRequest(action) {
     })  .then(response => {
             response.json();
         })
-        .then(result => {
-            prompt('Success:', result);
-        })
-        .catch(error => {
-            prompt('Error:', error);
-        });
 }
 
 

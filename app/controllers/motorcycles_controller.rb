@@ -24,7 +24,7 @@ class MotorcyclesController < ApplicationController
 
   def create
 
-    last_id = ::Motorcycles::LastIdRequest.new("http://localhost:1234/motorcycles").request
+    last_id = ::Motorcycles::LastIdRequest.new("http://localhost:1234/motorcycles").request || 1
 
     @motorcycle = Motorcycle.new(motorcycle_params)
 
