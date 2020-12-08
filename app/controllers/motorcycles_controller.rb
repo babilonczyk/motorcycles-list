@@ -6,8 +6,10 @@ class MotorcyclesController < ApplicationController
 
   def index
     @motorcycles = Motorcycle.all
+  end
 
-    unless @motorcycles.exists?
+  def seed_db
+    unless Motorcycle.all.exists?
 
       ::Motorcycles::RequestManager.new("GET", "http://localhost:1234/motorcycles").request
 
