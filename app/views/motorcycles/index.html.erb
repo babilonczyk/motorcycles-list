@@ -1,10 +1,6 @@
 <%= react_component("MotorcyclesNavbar", prerender: false) %>
 
-<div class="seed-btn-container">
-  <%= link_to "Seed Database", motorcycles_seed_db_path, method: :post, class: "seed-btn"%>
-</div>
-
-<div style="clear: both;"></div>
+<%= react_component("SeedBtn") %>
 
 <%= react_component("App", props: { motorcycles: @motorcycles}, prerender: false) %>
 
